@@ -1,0 +1,7 @@
+Reason for this File.      
+Test  commit, this was put here from Kerry Kergan
+to show that I can use this repository.I was
+putting files into the Mac  cvs and the team put
+all the project files on the Git repos.After all 
+the files were up I realized that I needed to use 
+this repo as well.

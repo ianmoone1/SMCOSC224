@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Produce feature.
+ */
+
+include_once 'produce.features.inc';
