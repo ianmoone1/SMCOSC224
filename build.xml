@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
  <target name="build"
-   depends="prepare,lint,pdepend,phpmd-ci,phpcs-ci,phpdox,phpunit"/>
+   depends="prepare,lint,pdepend,phpmd-ci,phpcs-ci,phpdox"/>
 
  <target name="build-parallel"
-   depends="prepare,lint,tools-parallel,phpunit"/>
+   depends="prepare,lint,tools-parallel"/>
 
  <target name="tools-parallel" description="Run tools in parallel">
   <parallel threadCount="2">
@@ -97,7 +97,4 @@
   <exec executable="phpdox"/>
  </target>
 
- <target name="phpunit" description="Run unit tests with PHPUnit">
-  <exec executable="phpunit" failonerror="true"/>
- </target>
 </project>
