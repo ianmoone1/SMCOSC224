@@ -119,13 +119,6 @@ function hook_uuid_entities_post_rebuild($plan_name) {
 }
 
 /**
- * Let other modules do things before default entities are created on revert.
- */
-function hook_uuid_entities_pre_rebuild($plan_name) {
-
-}
-
-/**
  * Let other modules do things after default entities are created on revert.
  */
 function hook_uuid_entities_post_rebuild($plan_name) {
