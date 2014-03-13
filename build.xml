@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
  <target name="build"
-   depends="prepare,lint,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdox,phpunit"/>
+   depends="prepare,lint,pdepend,phpmd-ci,phpcs-ci,phpdox,phpunit"/>
 
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel,phpunit"/>
@@ -12,7 +12,6 @@
     <antcall target="pdepend"/>
     <antcall target="phpmd-ci"/>
    </sequential>
-   <antcall target="phpcpd"/>
    <antcall target="phpcs-ci"/>
    <antcall target="phpdox"/>
   </parallel>
@@ -90,14 +89,6 @@
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=${basedir}/build/phpcs.xml" />
-   <arg path="${basedir}" />
-  </exec>
- </target>
-
- <target name="phpcpd" description="Find duplicate code using PHPCPD">
-  <exec executable="phpcpd">
-   <arg value="--log-pmd" />
-   <arg value="${basedir}/build/logs/pmd-cpd.xml" />
    <arg path="${basedir}" />
   </exec>
  </target>
