@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
  <target name="build"
-   depends="prepare,lint,pdepend,phpmd,phpcs-ci,phpdox,run-jslint"/>
+   depends="prepare,lint,pdepend,phpmd,phpcs-ci,phpdox"/>
 
  <target name="build-parallel"
    depends="prepare,lint,tools-parallel"/>
@@ -14,7 +14,6 @@
    </sequential>
    <antcall target="phpcs-ci"/>
    <antcall target="phpdox"/>
-   <antcall target="run-jslint"/>
   </parallel>
  </target>
 
@@ -83,17 +82,5 @@
  <target name="phpdox" description="Generate API documentation using phpDox">
   <exec executable="phpdox"/>
  </target>
-
- <target name="run-jslint" depends="clean">
-        <mkdir dir="reports">
-        //options for jslint
-        <jslint options="white,undef,plusplus,newcap,vars,indent=4">
-            //global variables like jquery
-            <predef>jQuery, setTimeout, history, window, document</predef>
-            <formatter type="junit" destfile="${reports.dir}">
-            <fileset dir="js" includes="**/*.js" excludes="lib/*.js">
-        </fileset></formatter></jslint>
-    </mkdir>
-  </target>
 
 </project>
