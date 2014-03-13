@@ -1,4 +1,4 @@
-<project name="phing-drupal" default="build" phingVersion="2.4.11">
+<project name="phing-drupal" default="build" >
 
 <!-- ## Main targets -->
 
