@@ -272,13 +272,29 @@ body.sidebar-second #content .section {
 .view-find-produce{
   width: 1000px;
 }
+
+.views-field-field-image{
+  width:50px;
+  
+}
+
+.views-field-field-image img{
+	width: 40px;
+	height: 40px;
+}
+.spaceBetweenImage{
+	width: 169px;
+	float:left;
+	height: 57px;
+}
 .produce-holder{
   display: inline-block;
   position: relative;
-  float: left;
+  float: right;
   padding: 5px;
   margin-left: 5px;
-  width: 150px;
+  width: 110px;
+  margin-top: -39px;
 }
 input{
   margin-right: 5px;

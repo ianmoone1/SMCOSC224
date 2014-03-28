@@ -31,6 +31,7 @@ function produce_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'spaceBetweenImage';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -63,6 +64,17 @@ function produce_views_default_views() {
   $handler->display->display_options['fields']['field_region']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_region']['delta_offset'] = '0';
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -72,8 +84,16 @@ function produce_views_default_views() {
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
    $title = $row->title;
+   //dpm($node->field_image[\'und\'][0][\'filename\']);
+  // dpm($node->field_image);
+   
    echo \'<div class="produce-holder"><input type=checkbox name="produce" value="\'.$title.\'">\'.$title.\'</div>\';
-
+   //print render($content[\'field_image\']);
+   //echo \'<img src="\'.image_style_url(\'fullwidth\', $node->field_image[\'und\'][0][\'filename\']).\'" />\';
+   //$path = $entity->field_image[\'und\'][0];
+//dpm($path);
+//$entity_field[0][\'value\'] = $path;
+//print_r($entity_field);
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';

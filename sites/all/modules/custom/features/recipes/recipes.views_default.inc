@@ -38,6 +38,45 @@ function recipes_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: JSON to PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'JSON to PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+/*
+	Version: 1.0
+	Author: Daniel Mason
+	Date: March 18, 2014
+
+	The following code reads in the yummly returned json file and translates it to PHP then prints it.
+	*/
+
+if (isset($_COOKIE["query"])){
+    $url = $_COOKIE["query"];
+    $url = str_replace(\' \', \'\', $url);
+    $jsonData = file_get_contents( $url ); 
+	$json = json_decode($jsonData, true);
+        echo $json[\'attribution\'][\'html\'];
+	$output = "<ul>";
+	foreach($json[\'matches\'] as $m){
+	    $output .= "<h4>".$m[\'recipeName\']."</h4>";
+            $output .= "<li>"."Rating: ".$m[\'rating\']."</li>";
+            $output .="<img src =".$m[\'imageUrlsBySize\'][\'90\'].">";
+	}
+	$output .="</ul>";
+    echo $output;
+}
+else
+    echo "<h4>Welcome guest!</h4>";
+
+ 
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
