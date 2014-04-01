@@ -13,13 +13,10 @@ function produce_default_page_manager_pages() {
   $page->api_version = 1;
   $page->name = 'produce';
   $page->task = 'page';
-  $page->admin_title = 'Produce';
+  $page->admin_title = 'produce';
   $page->admin_description = '';
-  $page->path = 'find-produce';
-  $page->access = array(
-    'type' => 'none',
-    'settings' => NULL,
-  );
+  $page->path = 'produce-finder';
+  $page->access = array();
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -62,13 +59,13 @@ function produce_default_page_manager_pages() {
     $pane->pid = 'new-1';
     $pane->panel = 'middle';
     $pane->type = 'views';
-    $pane->subtype = 'find_produce';
+    $pane->subtype = 'location';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
-      'nodes_per_page' => '5',
+      'nodes_per_page' => '1',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,
@@ -95,13 +92,13 @@ function produce_default_page_manager_pages() {
     $pane->pid = 'new-2';
     $pane->panel = 'middle';
     $pane->type = 'views';
-    $pane->subtype = 'location';
+    $pane->subtype = 'find_produce';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
       'use_pager' => 0,
-      'nodes_per_page' => '5',
+      'nodes_per_page' => '0',
       'pager_id' => '0',
       'offset' => '0',
       'more_link' => 0,
@@ -132,9 +129,9 @@ function produce_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'admin_title' => 'button',
+      'admin_title' => 'Button',
       'title' => '',
-      'body' => '<button id = "button" type = "button">Find Recipes</button>',
+      'body' => '<input id="button" type="button" value="Find Recipes">',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -149,7 +146,7 @@ function produce_default_page_manager_pages() {
     $display->content['new-3'] = $pane;
     $display->panels['middle'][2] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
+  $display->title_pane = 'new-2';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['produce'] = $page;

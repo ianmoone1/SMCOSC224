@@ -55,23 +55,23 @@ function recipes_views_default_views() {
 	The following code reads in the yummly returned json file and translates it to PHP then prints it.
 	*/
 
-if (isset($_COOKIE["query"])){
-    $url = $_COOKIE["query"];
-    $url = str_replace(\' \', \'\', $url);
-    $jsonData = file_get_contents( $url ); 
-	$json = json_decode($jsonData, true);
-        echo $json[\'attribution\'][\'html\'];
-	$output = "<ul>";
-	foreach($json[\'matches\'] as $m){
+if (isset($_COOKIE["query"])){      //check to see if cookie has been set with relevant url data.
+    $url = $_COOKIE["query"];      // pull url
+  //  $url = str_replace(\' \', \'\', $url);    // remove white space fron url
+    $jsonData = file_get_contents( $url );   // get the json data from yummly
+	$json = json_decode($jsonData, true);  //format json into php readable data
+        echo $json[\'attribution\'][\'html\'];       // print yummly required attribution 
+	$output = "<ul>";                        // create un-ordered list 
+	foreach($json[\'matches\'] as $m){    // select desired data from returned recipes 
 	    $output .= "<h4>".$m[\'recipeName\']."</h4>";
             $output .= "<li>"."Rating: ".$m[\'rating\']."</li>";
             $output .="<img src =".$m[\'imageUrlsBySize\'][\'90\'].">";
 	}
-	$output .="</ul>";
-    echo $output;
+	$output .="</ul>";                       // close list
+    echo $output;                                // output list 
 }
 else
-    echo "<h4>Welcome guest!</h4>";
+    echo "<h4>Please make sure your browser has cookies enabled. </h4>";  // if the cookie is not set print text
 
  
 ?>';
