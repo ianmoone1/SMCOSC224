@@ -54,42 +54,6 @@ function produce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_address'
-  $field_instances['node-location-field_address'] = array(
-    'bundle' => 'location',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => NULL,
-        'settings' => array(),
-        'type' => NULL,
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_address',
-    'label' => 'Address',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => NULL,
-      'settings' => array(),
-      'type' => NULL,
-      'weight' => -3,
-    ),
-  );
-
   // Exported field_instance: 'node-produce-field_image'
   $field_instances['node-produce-field_image'] = array(
     'bundle' => 'produce',
@@ -137,6 +101,43 @@ function produce_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => -1,
+    ),
+  );
+
+  // Exported field_instance: 'node-produce-field_region'
+  $field_instances['node-produce-field_region'] = array(
+    'bundle' => 'produce',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_region',
+    'label' => 'Region',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => -4,
     ),
   );
 
@@ -222,9 +223,9 @@ function produce_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Address');
   t('Body');
   t('Image');
+  t('Region');
   t('Region/Season');
   t('Type');
 
