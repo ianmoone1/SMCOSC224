@@ -1,16 +1,8 @@
 #main-menu {
   background: #fff;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
   position: absolute;
   right: 0;
   top: 29px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
-  -moz-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
-  -o-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.03);
 }
 #main-menu ul.menu,
 #main-menu ul.menu * {

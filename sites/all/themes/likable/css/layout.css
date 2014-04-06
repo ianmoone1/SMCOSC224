@@ -48,8 +48,15 @@ ol li {
 
 .action-links {
   margin: 0 0 12px 0;
+    text-decoration: none;
 }
-
+.section{
+  width: 940px;
+}
+.links .delete{
+  position: relative;
+  left: 25px;
+}
 hr {
   background: #d7d7d7;
   border: none;

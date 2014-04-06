@@ -1,19 +1,14 @@
 html {
-  background: url('../images/bg_site_wall_v4.jpg') repeat-x 0 0
-}
-#about-us-text {
-font-color: #000000;
-font-weight: bold;
+  background: url('../images/bg_site_wall_v4.jpg') repeat-x 0 0;
+    font: 13px/1.6 "myriad pro" sans-serif;
 }
 body {
   background: #fff;
   color: #1f2024;
-  font: 13px/1.6 "Helvetica", "Tahoma", "Trebuchet MS", "Arial", sans-serif;
+  font: 13px/1.6 "myriad pro" sans-serif;
   position: relative;
 }
-#faq-content p {
-font-size: 17px;
-}
+
 a {
   color: #1353a8;
   font-weight: normal;
@@ -62,6 +57,7 @@ h3 {
 h4 {
   font-size: 14px;
   margin: 0 0 12px 0;
+  font-weight: bold;
 }
 h5,
 h6 {
@@ -286,6 +282,10 @@ font-weight: bolder;
   font-size: 18px;
   font-weight: bold;
 }
+
+/*****************************\
+  Produce View Css
+\*****************************/
 .views-field-field-produce-area{
   width: 1000px;
   height: 500px;
@@ -295,37 +295,144 @@ font-weight: bolder;
 }
 .view-find-produce{
   width: 1000px;
+  overflow: hidden;
 }
-
 .produce-holder{
   display: inline-block;
   position: relative;
-  float: left;
   padding: 5px;
+  float: left;
+  text-align: center;
   margin-left: 5px;
-  width: 150px;
-  font-size: 12px;
+  width: 105px;
+  height: 136px;
+  font-weight: bold;
+  font-family: "myriad pro" "myriad web pro" "sans-serif";
+  font-size: 15px;
+}
+.view-find-produce{
+  height: 500px;
+}
+.produce-holder input{
+  margin-right: 5px;
+  display: none;
+}
+.produce-holder img:hover{
+   border: 2px solid #be8298;
+   border-radius: 3px;
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -ms-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.border{
+  border: 2px solid #be8298;
+  border-radius: 3px;
+}
+#button{
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 15px 8px 15px;
+  font: 17px/17px "museo-slab",Georgia,serif;
+  font-weight: 500;
+  color: #fff;
+  background: #770b35;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #be8298;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#button:hover {
+  color: #fff;
+  text-decoration: none;
+  background: #a0003e;
+  border-color: #be8298;
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -ms-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+.form-item-tid {
+  float: left;
+  margin-right: 65px;
+}
+
+/*****************************\
+  Help View Css
+\*****************************/
+#help-directions{
+  font-size: 20px;
+  font-weight: bold;
   font-color: #000005;
 }
-input{
-  margin-right: 5px;
-}
-.views-row{
-  position: relative;
-}
-#help-directions{
-font-size: 20px;
-font-weight: bold;
-font-color: #000005;
-}
 #edit-body-und-0-value {
-font-weight: bolder;
-font-size: 20px;
-}
-.views-row views-row-2 views-row-even views-row-last{
-font-weight: bold;
+  font-weight: bolder;
+  font-size: 20px;
 }
 #more-detail-subtitle {
-font-size: 16px;
-font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
+}
+#faq-content p {
+  font-size: 17px;
+}
+#about-us-text {
+  font-color: #000000;
+  font-weight: bold;
+}
+
+/*****************************\
+  Location View Css
+\*****************************/
+#location{
+  position: relative;
+  top: 5px;
+  left: 10px;
+  font-size: 18px;
+  color: white;
+}
+.view-id-location{
+  background: url('../images/bg_home_search.png') no-repeat;
+  height: 70px;
+  width: 950px;
+}
+.explanation{
+  font-size: 14px;
+}
+/*****************************\
+  Header and Body Css
+\*****************************/
+#header{
+  width: 1000px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 29px;
+}
+#main{
+  background: white;
+  border-radius: 15px;
+  margin-bottom: 30px; 
+}
+.view-id-recipes{
+  width: 1000px;
+}
+/******************************\
+  Add content css
+\******************************/
+.action-links li a{
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+.action-links{
+  text-align: center;
+}
+.links .delete a{
+  color: red;
 }
