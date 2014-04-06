@@ -215,7 +215,7 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'soil',
+      'database' => 'soilmate',
       'username' => 'root',
       'password' => '',
       'host' => 'localhost',
