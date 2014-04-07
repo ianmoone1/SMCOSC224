@@ -70,7 +70,7 @@
 		$('#button').click(function() {
 		    replaceString();
 			document.cookie = "query = " + URL;
-			window.location ="/recipes";
+			window.location ="/?q=recipes";
 		});
 
 
