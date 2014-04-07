@@ -246,7 +246,7 @@ function produce_default_page_manager_pages() {
       'admin_title' => 'Button',
       'title' => '',
       'body' => '<FORM>
-<INPUT Type="BUTTON" id = "button" VALUE="Find Recipes" ONCLICK="window.location.href=\'http://soil.localhost:8082/recipes\'"> 
+<INPUT Type="BUTTON" id = "button" VALUE="Find Recipes" ONCLICK="window.location.href=\'http://soil.localhost:8082/?q=recipes\'"> 
 </FORM>',
       'format' => 'full_html',
       'substitute' => TRUE,

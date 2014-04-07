@@ -83,8 +83,8 @@ function produce_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 3,
-      'file_directory' => '',
+      'default_image' => 0,
+      'file_directory' => 'sites/default/files',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
