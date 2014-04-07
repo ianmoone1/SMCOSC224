@@ -366,7 +366,7 @@ font-weight: bolder;
   display: inline-block;
   margin-top: 10px;
   padding: 7px 15px 8px 15px;
-  font: 17px/17px "museo-slab",Georgia,serif;
+  font: 15px/15px "museo-slab",Georgia,serif;
   font-weight: 500;
   color: #fff;
   background: #770b35;
@@ -393,7 +393,7 @@ font-weight: bolder;
   display: inline-block;
   margin-top: 10px;
   padding: 7px 15px 8px 15px;
-  font: 17px/17px "museo-slab",Georgia,serif;
+  font: 15px/15px "museo-slab",Georgia,serif;
   font-weight: 500;
   color: #fff;
   background: #770b35;
@@ -475,6 +475,60 @@ font-weight: bolder;
 }
 .view-id-recipes{
   width: 1000px;
+}
+.view-id-recipes{
+  width: 940px;
+}
+#prev{
+display: block;
+float: left;
+margin: 0;
+padding: 0;
+width: 117px;
+height: 29px;
+font-family: "museo-slab",Georgia,serif;
+font-weight: 500;
+color: #fff;
+border: none;
+text-align: center;
+text-decoration: none;
+cursor: pointer;
+background: url(/sites/all/themes/likable/images/sprite_elements.png) -419px -414px no-repeat;
+z-index: 1;
+}
+#prev:hover{
+background-position: -536px -414px;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none;
+transition: none;
+}
+#next{
+display: block;
+position: relative;
+left: 358px;
+margin: 0;
+padding: 0;
+width: 117px;
+height: 29px;
+font-family: "museo-slab",Georgia,serif;
+font-weight: 500;
+color: #fff;
+border: none;
+text-align: center;
+text-decoration: none;
+cursor: pointer;
+background: url(/sites/all/themes/likable/images/sprite_elements.png) -419px -414px no-repeat;
+z-index: 1;
+}
+#next:hover{
+background-position: -536px -414px;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none;
+transition: none;
 }
 /******************************\
   Add content css
