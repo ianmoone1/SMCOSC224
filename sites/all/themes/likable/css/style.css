@@ -361,6 +361,60 @@ font-weight: bolder;
   float: left;
   margin-right: 65px;
 }
+#showdp{
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 15px 8px 15px;
+  font: 17px/17px "museo-slab",Georgia,serif;
+  font-weight: 500;
+  color: #fff;
+  background: #770b35;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #be8298;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#showdp:hover{
+  color: #fff;
+  text-decoration: none;
+  background: #a0003e;
+  border-color: #be8298;
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -ms-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
+#showfa{
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 15px 8px 15px;
+  font: 17px/17px "museo-slab",Georgia,serif;
+  font-weight: 500;
+  color: #fff;
+  background: #770b35;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #be8298;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#showfa:hover{
+  color: #fff;
+  text-decoration: none;
+  background: #a0003e;
+  border-color: #be8298;
+  -webkit-transition: background 0.15s linear;
+  -moz-transition: background 0.15s linear;
+  -ms-transition: background 0.15s linear;
+  -o-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+}
 
 /*****************************\
   Help View Css
@@ -398,7 +452,7 @@ font-weight: bolder;
 }
 .view-id-location{
   background: url('../images/bg_home_search.png') no-repeat;
-  height: 70px;
+  height: 100px;
   width: 950px;
 }
 .explanation{

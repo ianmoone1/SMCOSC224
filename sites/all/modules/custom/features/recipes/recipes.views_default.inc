@@ -36,8 +36,10 @@ function recipes_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: JSON to PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -48,32 +50,63 @@ function recipes_views_default_views() {
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 /*
-	Version: 1.0
-	Author: Daniel Mason
+	Version: 1.3
+	Author: Daniel Mason, Jerad Mason
 	Date: March 18, 2014
 
 	The following code reads in the yummly returned json file and translates it to PHP then prints it.
 	*/
-
-if (isset($_COOKIE["query"])){      //check to see if cookie has been set with relevant url data.
-    $url = $_COOKIE["query"];      // pull url
-  //  $url = str_replace(\' \', \'\', $url);    // remove white space fron url
-    $jsonData = file_get_contents( $url );   // get the json data from yummly
-	$json = json_decode($jsonData, true);  //format json into php readable data
-        echo $json[\'attribution\'][\'html\'];       // print yummly required attribution 
-	$output = "<ul>";                        // create un-ordered list 
-	foreach($json[\'matches\'] as $m){    // select desired data from returned recipes 
-	    $output .= "<h4>".$m[\'recipeName\']."</h4>";
-            $output .= "<li>"."Rating: ".$m[\'rating\']."</li>";
-            $output .="<img src =".$m[\'imageUrlsBySize\'][\'90\'].">";
+if (isset($_COOKIE["query"])){
+    $url = $_COOKIE["query"];
+    $url = str_replace( \' \', \'%20\', $url);
+    $jsonData = @file_get_contents( $url ); 
+    if($jsonData == FALSE) { echo \'Our Recipe functionality is currently down, please try again later\'; }
+    else{
+	$json = json_decode($jsonData, true);
+        echo $json[\'attribution\'][\'html\'];
+	$output = "\\n\\n<table border=\'0\' style=\'border-collapse:collapse;background-color:white;cellspacing=\'0\'\'>";
+	foreach($json[\'matches\'] as $m){
+	    $output .= "<tr>"."<th colspan = \'2\' style=\'background-image: linear-gradient(to right, #770a35, #9f5371)\'>"."<a style=\'color:white\' href = \'https://www.yummly.com/recipe/".$m[\'id\']."\'>".$m[\'recipeName\']."</a>"."</th>"."</tr>";
+            $output .= "<tr>"."<td>"."<img src =".$m[\'imageUrlsBySize\'][\'90\'].">"."</td>";
+            $output .= "<td>"."<b>Ingredients: </b>".implode(", ", $m[\'ingredients\']);
+            $check = 0;
+            if (@$m[\'flavors\'][\'sour\'] > 0)
+               $check=1;
+            if (@$m[\'flavors\'][\'salty\'] > 0)
+               $check=1;
+            if (@$m[\'flavors\'][\'sweet\'] > 0)
+               $check=1;
+            if (@$m[\'flavors\'][\'meaty\'] > 0)
+               $check=1;
+            if (@$m[\'flavors\'][\'bitter\'] > 0)
+               $check=1;
+            if ($check != 0) {
+            $output .= "<br> <b>Flavors:</b> Sour: "."<meter value=".@$m[\'flavors\'][\'sour\'].">".intval(@$m[\'flavors\'][\'sour\']*100)."%</meter>"." "."Salty: "."<meter value=".@$m[\'flavors\'][\'salty\'].">".intval(@$m[\'flavors\'][\'salty\']*100)."%</meter>"." ";
+            $output .= "Sweet: "."<meter value=".@$m[\'flavors\'][\'sweet\'].">".intval(@$m[\'flavors\'][\'sweet\']*100)."%</meter>"." "."Savory: "."<meter value=".@$m[\'flavors\'][\'meaty\'].">".intval(@$m[\'flavors\'][\'meaty\']*100)."%</meter>"." ";
+            $output .= "Bitter: "."<meter value=".@$m[\'flavors\'][\'bitter\'].">".intval(@$m[\'flavors\'][\'bitter\']*100)."%</meter>";
+            }
+            else
+                 $output .= "<br> <i>No flavor data available.</i>";
+            $output .= "</td>"."</tr>"."<tr>"."<td colspan = \'2\'>". "Rating: ";
+            $rated = intval($m[\'rating\']);
+        for ($i = 0; $i < 5; $i++){
+            if ($rated == 0){
+                $output .= "<span>☆<span>";
+            }
+            else{
+                $output .= "<span style=\'color:#CC6600\'>★<span>";
+                $rated = $rated - 1;
+            } 
+        }
+            $output .= "</td>"."</tr>";
 	}
-	$output .="</ul>";                       // close list
-    echo $output;                                // output list 
+	$output .="</table>";
+    echo $output;
+    
+}
 }
 else
-    echo "<h4>Please make sure your browser has cookies enabled. </h4>";  // if the cookie is not set print text
-
- 
+    echo "<h4>Please select a recipe and make sure cookies is enabled.</h4>";
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';

@@ -76,7 +76,7 @@ THE SOFTWARE.
 $title = $row->title;
 	$node = node_load($data->nid);                                       
                               
-				echo \'<div id="dietaryPreferences"><input type="checkbox" name="dietaryPreferances" value="\'.$title.\'">\'.$title.\'</div>\';
+				echo \'<div id="dietaryPreferences" ><input type="checkbox" name="dietaryPreferances" value="\'.$title.\'">\'.$title.\'</div>\';
                        
 ?>
 ';
@@ -409,7 +409,7 @@ $title = $row->title;
     $city = $_SESSION[\'smart_ip\'][\'location\'][\'city\'];
     date_default_timezone_set(\'UTC\');
    $month = date(\'F\');
-echo\'<div id="location">We have detected you are in:<b> \'.$city.\' \'.$region.\' \'.$country_code.\'</b> and your current month is: <b>\'.$month.\'</b><br><span class="explanation"> Click on the images below to select the items you would like to find recipes for!</span></div>\';
+echo\'<div id="location">We have detected you are in:<b> \'.$city.\' \'.$region.\' \'.$country_code.\'</b> and your current month is: <b>\'.$month.\'</b><br><span class="explanation">The items below are items we found that are available locally to you and are also in season!<br> Click on the images below to select the items you would like to find recipes for!</span></div>\';
 
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
