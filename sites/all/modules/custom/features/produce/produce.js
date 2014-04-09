@@ -58,7 +58,6 @@
 			str = str.replace("allowedIngredient[]=Lacto Vegetarian",lactoVeg);
 			
 				URL=str;
-				alert(URL);
 		}
 	 	$(function() {
 	   		$('input').click(update);
