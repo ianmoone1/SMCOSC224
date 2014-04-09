@@ -278,9 +278,9 @@ font-weight: bolder;
 .views-field-field-main-content{
   margin-top: 10px;
   text-align: center;
-  font-family: 'sans-serif';
-  font-size: 18px;
-  font-weight: bold;
+  font-family: "Myriad Pro","Trebuchet MS",arial;
+  font-size: 15px;
+  color: #666;
 }
 
 /*****************************\
