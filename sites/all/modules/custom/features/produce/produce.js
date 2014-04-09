@@ -54,8 +54,8 @@
 			str = str.replace("allowedIngredient[]=vegan",vegan);
 			str = str.replace("allowedIngredient[]=vegetarian",vegetarian);
 			str = str.replace("allowedIngredient[]=Pescetarian",pescetarian);
-			str = str.replace("allowedIngredient[]=Ovo Vegetarian",ovoVeg);
-			str = str.replace("allowedIngredient[]=Lacto Vegetarian",lactoVeg);
+			str = str.replace("allowedIngredient[]=ovo vegetarian",ovoVeg);
+			str = str.replace("allowedIngredient[]=lacto vegetarian",lactoVeg);
 			
 				URL=str;
 		}
