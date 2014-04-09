@@ -42,7 +42,7 @@
 				str = str.replace("allowedIngredient[]=sesame free",sesame);
 				str = str.replace("allowedIngredient[]=soy free",soy);
 				str = str.replace("allowedIngredient[]=sulfite free",sulfite);
-				str = str.replace("allowedIngredient[]=treenut free",treenut);
+				str = str.replace("allowedIngredient[]=tree nut free",treenut);
 				str = str.replace("allowedIngredient[]=wheat free",wheat);
 				
 			var vegan = "allowedDiet[]=386^vegan";
@@ -58,6 +58,7 @@
 			str = str.replace("allowedIngredient[]=Lacto Vegetarian",lactoVeg);
 			
 				URL=str;
+				alert(URL);
 		}
 	 	$(function() {
 	   		$('input').click(update);
