@@ -108,7 +108,7 @@ h2 a:hover {
 
 #main-wrapper {
   margin: 0 auto;
-  width: 1000px;
+  width: 1080px;
 }
 #main {
   padding: 0 30px 0 30px;
@@ -175,17 +175,18 @@ body.sidebar-second #content {
 /* sidebar-first */
 #sidebar-first {
   float: left;
-  width: 200px;
+  width: 185px;
 }
 
 /* sidebar-second */
 #sidebar-second {
   float: right;
   width: 200px;
+  
 }
 
 #sidebar-first .section {
-  border-right: 1px solid #ebebeb;
+
   padding: 20px 20px 40px 0;
 }
 #sidebar-second .section {
@@ -294,7 +295,7 @@ font-weight: bolder;
   background-color: #eeeeee;
 }
 .view-find-produce{
-  width: 1000px;
+
   overflow: hidden;
 }
 .produce-holder{
@@ -311,7 +312,15 @@ font-weight: bolder;
   font-size: 15px;
 }
 .view-find-produce{
-  height: 500px;
+  margin-bottom: 10px;
+}
+.pane-find-produce h2{
+  font-family: "myriad pro";
+  font-weight: bold;
+}
+.pane-what-in-fridge h2{
+  font-family: "myriad pro";
+  font-weight: bold;
 }
 .produce-holder input{
   margin-right: 5px;
@@ -329,6 +338,9 @@ font-weight: bolder;
 .border{
   border: 2px solid #be8298;
   border-radius: 3px;
+}
+.pane-what-in-fridge{
+  overflow: hidden;
 }
 #button{
   position: relative;
@@ -453,7 +465,7 @@ font-weight: bolder;
 .view-id-location{
   background: url('../images/bg_home_search.png') no-repeat;
   height: 100px;
-  width: 950px;
+  width: 86%;
 }
 .explanation{
   font-size: 14px;
@@ -462,7 +474,7 @@ font-weight: bolder;
   Header and Body Css
 \*****************************/
 #header{
-  width: 1000px;
+  width: 1080px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -530,6 +542,113 @@ background-position: -536px -414px;
 -o-transition: none;
 transition: none;
 }
+
+/*****************************\
+  Advanced Search Block Sidebar Css
+\*****************************/
+
+#block-views-dietary-preferences-block-1{
+  width: 185px;
+  background: #faf8f5;
+}
+#block-views-dietary-preferences-block-1 h2{
+  background: #b6a483;
+  color: #fff;
+  font-family: "myriad pro";
+  padding: 10px;
+}
+#block-views-food-allergies-block-1{
+  width: 185px;
+  background: #faf8f5;
+}
+#block-views-food-allergies-block-1 h2{
+  background: #b6a483;
+  color: #fff;
+  font-family: "myriad pro";
+  padding: 10px;
+}
+#dietaryPreferences {
+  margin-left: 10px;
+  padding: 5px;
+  position: relative;
+
+}
+#dietaryPreferences input[type="checkbox"]{
+    opacity:0;
+    height: 16px;
+    width: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#dietaryPreferences input[type="checkbox"] + label { 
+    height: 23px;
+    width: 26px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: url(/sites/all/themes/likable/images/sprite_elements.png) -136px -35px no-repeat;
+}
+#dietaryPreferences input[type="checkbox"]:checked + label{
+    background: url(/sites/all/themes/likable/images/sprite_elements.png) -136px -61px no-repeat;
+    height: 23px;
+    width: 26px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+#foodAllergies {
+  margin-left: 10px;
+  padding: 5px;
+  position: relative;
+
+}
+#foodAllergies input[type="checkbox"]{
+    opacity:0;
+    height: 16px;
+    width: 17px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+#foodAllergies input[type="checkbox"] + label { 
+    height: 23px;
+    width: 26px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: url(/sites/all/themes/likable/images/sprite_elements.png) -136px -35px no-repeat;
+}
+#foodAllergies input[type="checkbox"]:checked + label{
+    background: url(/sites/all/themes/likable/images/sprite_elements.png) -136px -61px no-repeat;
+    height: 23px;
+    width: 26px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#foodAllergies{
+  margin-left: 10px;
+  padding: 5px;
+}
+.pref-label{
+color: rgb(128, 149, 72);
+cursor: auto;
+display: inline;
+font-family: 'Myriad Pro', 'Trebuchet MS', arial;
+font-size: 18px;
+height: auto;
+line-height: 18px;
+margin-left: 25px;
+}
+
 /******************************\
   Add content css
 \******************************/
